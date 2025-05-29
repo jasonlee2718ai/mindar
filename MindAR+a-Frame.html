@@ -59,7 +59,171 @@
 </head>
 
 <body>
-    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true" lang="en-US"><h1 id="A-Frame-的cheat-sheet" data-id="A-Frame-的cheat-sheet"><a class="anchor hidden-xs" href="#A-Frame-的cheat-sheet" title="A-Frame-的cheat-sheet"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>A-Frame 的cheat sheet</span></h1><p><span>以下是 </span><strong><span>結合 </span><code>mindar.js</code><span> + </span><code>A-Frame</code><span> 的基本 AR 範例</span></strong><span>（使用影像辨識觸發 3D 模型顯示），適用於網頁瀏覽器上的 WebAR 應用：</span></p><hr><h3 id="📁-1-資料夾結構建議" data-id="📁-1-資料夾結構建議"><a class="anchor hidden-xs" href="#📁-1-資料夾結構建議" title="📁-1-資料夾結構建議"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📁 </span><strong><span>1. 資料夾結構建議</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="0"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+    <div id="doc" class="markdown-body container-fluid comment-enabled comment-inner" data-hard-breaks="true" lang="en-US"><h1 id="A-Frame-的cheat-sheet" data-id="A-Frame-的cheat-sheet"><a class="anchor hidden-xs" href="#A-Frame-的cheat-sheet" title="A-Frame-的cheat-sheet"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>A-Frame 的cheat sheet</span></h1><p><span>以下是針對 </span><strong><span>A-Frame (WebVR/WebXR 框架)</span></strong><span> 的簡易 Cheat Sheet，以繁體中文整理，便於快速查閱：</span></p><hr><h3 id="🔧-基本結構" data-id="🔧-基本結構"><a class="anchor hidden-xs" href="#🔧-基本結構" title="🔧-基本結構"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🔧 </span><strong><span>基本結構</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="4"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+        <pre class="click-event-handled"><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://aframe.io/releases/1.5.0/aframe.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-scene</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- 3D 物件、相機、光源放這裡 --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a-scene</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+      </div><hr><h3 id="📦-常用-Primitive-元件" data-id="📦-常用-Primitive-元件"><a class="anchor hidden-xs" href="#📦-常用-Primitive-元件" title="📦-常用-Primitive-元件"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📦 </span><strong><span>常用 Primitive 元件</span></strong></h3><table>
+<thead>
+<tr>
+<th><span>元件</span></th>
+<th><span>範例</span></th>
+<th><span>描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a-box</code></td>
+<td><code>&lt;a-box color="red"&gt;&lt;/a-box&gt;</code></td>
+<td><span>立方體</span></td>
+</tr>
+<tr>
+<td><code>a-sphere</code></td>
+<td><code>&lt;a-sphere radius="1.25"&gt;&lt;/a-sphere&gt;</code></td>
+<td><span>球體</span></td>
+</tr>
+<tr>
+<td><code>a-cylinder</code></td>
+<td><code>&lt;a-cylinder height="1" radius="0.5"&gt;&lt;/a-cylinder&gt;</code></td>
+<td><span>圓柱體</span></td>
+</tr>
+<tr>
+<td><code>a-plane</code></td>
+<td><code>&lt;a-plane width="4" height="4"&gt;&lt;/a-plane&gt;</code></td>
+<td><span>平面</span></td>
+</tr>
+<tr>
+<td><code>a-sky</code></td>
+<td><code>&lt;a-sky color="#ECECEC"&gt;&lt;/a-sky&gt;</code></td>
+<td><span>天空背景</span></td>
+</tr>
+<tr>
+<td><code>a-text</code></td>
+<td><code>&lt;a-text value="Hello"&gt;&lt;/a-text&gt;</code></td>
+<td><span>文字</span></td>
+</tr>
+</tbody>
+</table><hr><h3 id="🎯-基本屬性" data-id="🎯-基本屬性"><a class="anchor hidden-xs" href="#🎯-基本屬性" title="🎯-基本屬性"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🎯 </span><strong><span>基本屬性</span></strong></h3><table>
+<thead>
+<tr>
+<th><span>屬性</span></th>
+<th><span>說明</span></th>
+<th><span>範例</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>position</code></td>
+<td><span>位置</span></td>
+<td><code>position="0 1 -3"</code></td>
+</tr>
+<tr>
+<td><code>rotation</code></td>
+<td><span>旋轉</span></td>
+<td><code>rotation="0 45 0"</code></td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><span>縮放</span></td>
+<td><code>scale="2 2 2"</code></td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><span>顏色</span></td>
+<td><code>color="#FF0000"</code></td>
+</tr>
+<tr>
+<td><code>material</code></td>
+<td><span>材質</span></td>
+<td><code>material="opacity:0.5"</code></td>
+</tr>
+<tr>
+<td><code>geometry</code></td>
+<td><span>幾何形狀參數</span></td>
+<td><code>geometry="primitive:box; height:2"</code></td>
+</tr>
+</tbody>
+</table><hr><h3 id="📸-相機與控制" data-id="📸-相機與控制"><a class="anchor hidden-xs" href="#📸-相機與控制" title="📸-相機與控制"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📸 </span><strong><span>相機與控制</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="4"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+        <pre class="click-event-handled"><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">a-entity</span> <span class="hljs-attr">camera</span> <span class="hljs-attr">look-controls</span> <span class="hljs-attr">wasd-controls</span> <span class="hljs-attr">position</span>=<span class="hljs-string">"0 1.6 0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-entity</span>&gt;</span>
+</code></pre>
+      </div><ul>
+<li><code>camera</code><span>：啟用相機</span></li>
+<li><code>look-controls</code><span>：滑鼠/手機轉頭控制</span></li>
+<li><code>wasd-controls</code><span>：鍵盤移動（WASD）</span></li>
+</ul><hr><h3 id="💡-光源元件" data-id="💡-光源元件"><a class="anchor hidden-xs" href="#💡-光源元件" title="💡-光源元件"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>💡 </span><strong><span>光源元件</span></strong></h3><table>
+<thead>
+<tr>
+<th><span>元件</span></th>
+<th><span>範例</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a-light</code></td>
+<td><code>&lt;a-light type="ambient" color="#fff"&gt;&lt;/a-light&gt;</code></td>
+</tr>
+<tr>
+<td><span>點光源</span></td>
+<td><code>&lt;a-light type="point" intensity="2" position="2 4 4"&gt;&lt;/a-light&gt;</code></td>
+</tr>
+</tbody>
+</table><hr><h3 id="🖼️-材質與貼圖" data-id="🖼️-材質與貼圖"><a class="anchor hidden-xs" href="#🖼️-材質與貼圖" title="🖼️-材質與貼圖"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🖼️ </span><strong><span>材質與貼圖</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="4"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+        <pre class="click-event-handled"><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">a-box</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"#texture-id"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-box</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">a-assets</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"texture-id"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"texture.jpg"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a-assets</span>&gt;</span>
+</code></pre>
+      </div><hr><h3 id="🕹️-互動-事件" data-id="🕹️-互動-事件"><a class="anchor hidden-xs" href="#🕹️-互動-事件" title="🕹️-互動-事件"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🕹️ </span><strong><span>互動 (事件)</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="4"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+        <pre class="click-event-handled"><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">a-box</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myBox"</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-box</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'#myBox'</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">'被點了！'</span>);
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+      </div><hr><h3 id="🔁-動畫-Animation" data-id="🔁-動畫-Animation"><a class="anchor hidden-xs" href="#🔁-動畫-Animation" title="🔁-動畫-Animation"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🔁 </span><strong><span>動畫 (Animation)</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="4"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+        <pre class="click-event-handled"><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">a-box</span> <span class="hljs-attr">animation</span>=<span class="hljs-string">"property: rotation; to: 0 360 0; loop: true; dur: 2000"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-box</span>&gt;</span>
+</code></pre>
+      </div><hr><h3 id="📁-擴充元件範例" data-id="📁-擴充元件範例"><a class="anchor hidden-xs" href="#📁-擴充元件範例" title="📁-擴充元件範例"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📁 </span><strong><span>擴充元件範例</span></strong></h3><table>
+<thead>
+<tr>
+<th><span>功能</span></th>
+<th><span>套件</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span>控制器支援</span></td>
+<td><code>aframe-extras</code></td>
+</tr>
+<tr>
+<td><span>粒子效果</span></td>
+<td><code>aframe-particle-system-component</code></td>
+</tr>
+<tr>
+<td><span>物理引擎</span></td>
+<td><code>aframe-physics-system</code></td>
+</tr>
+<tr>
+<td><span>glTF 載入</span></td>
+<td><code>&lt;a-gltf-model src="model.glb"&gt;&lt;/a-gltf-model&gt;</code></td>
+</tr>
+</tbody>
+</table><hr><h3 id="🌐-資源推薦" data-id="🌐-資源推薦"><a class="anchor hidden-xs" href="#🌐-資源推薦" title="🌐-資源推薦"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🌐 </span><strong><span>資源推薦</span></strong></h3><ul>
+<li><span>官方網站：</span><a href="https://aframe.io" target="_blank" rel="noopener"><span>https://aframe.io</span></a></li>
+<li><span>A-Frame Registry（元件庫）：</span><a href="https://aframe.io/aframe-registry/" target="_blank" rel="noopener"><span>https://aframe.io/aframe-registry</span></a></li>
+<li><span>線上編輯器（Glitch / CodePen）：支援即時預覽</span></li>
+</ul><hr><p><span>若你需要 PDF / 圖表版或想整理成中文教學頁面，我也可以幫你生成！是否需要？</span></p><hr><h1 id="結合mindarjs--A-Frame的範例" data-id="結合mindarjs--A-Frame的範例"><a class="anchor hidden-xs" href="#結合mindarjs--A-Frame的範例" title="結合mindarjs--A-Frame的範例"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>結合mindar.js + A-Frame的範例</span></h1><p><span>以下是 </span><strong><span>結合 </span><code>mindar.js</code><span> + </span><code>A-Frame</code><span> 的基本 AR 範例</span></strong><span>（使用影像辨識觸發 3D 模型顯示），適用於網頁瀏覽器上的 WebAR 應用：</span></p><hr><h3 id="📁-1-資料夾結構建議" data-id="📁-1-資料夾結構建議"><a class="anchor hidden-xs" href="#📁-1-資料夾結構建議" title="📁-1-資料夾結構建議"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📁 </span><strong><span>1. 資料夾結構建議</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="0"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
         <pre class="click-event-handled"><code>/my-mindar-aframe-demo/
 │
 ├── index.html
@@ -118,7 +282,7 @@
 <li><span>加入互動（點擊 / hover）</span></li>
 <li><span>同時追蹤多個圖像</span></li>
 <li><span>加入動畫效果</span></li>
-</ul><p><span>可再提出，我能幫你補上進階版本。是否需要我打包一份完整 zip？</span></p><hr><h1 id="結合mindarjs--A-Frame的範例" data-id="結合mindarjs--A-Frame的範例"><a class="anchor hidden-xs" href="#結合mindarjs--A-Frame的範例" title="結合mindarjs--A-Frame的範例"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>結合mindar.js + A-Frame的範例</span></h1><p><span>以下是 </span><strong><span>結合 </span><code>mindar.js</code><span> + </span><code>A-Frame</code><span> 的基本 AR 範例</span></strong><span>（使用影像辨識觸發 3D 模型顯示），適用於網頁瀏覽器上的 WebAR 應用：</span></p><hr><h3 id="📁-1-資料夾結構建議7" data-id="📁-1-資料夾結構建議"><a class="anchor hidden-xs" href="#📁-1-資料夾結構建議7" title="📁-1-資料夾結構建議7"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📁 </span><strong><span>1. 資料夾結構建議</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="0"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+</ul><p><span>可再提出，我能幫你補上進階版本。是否需要我打包一份完整 zip？</span></p><hr><h1 id="結合mindarjs--A-Frame的範例17" data-id="結合mindarjs--A-Frame的範例"><a class="anchor hidden-xs" href="#結合mindarjs--A-Frame的範例17" title="結合mindarjs--A-Frame的範例17"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>結合mindar.js + A-Frame的範例</span></h1><p><span>以下是 </span><strong><span>結合 </span><code>mindar.js</code><span> + </span><code>A-Frame</code><span> 的基本 AR 範例</span></strong><span>（使用影像辨識觸發 3D 模型顯示），適用於網頁瀏覽器上的 WebAR 應用：</span></p><hr><h3 id="📁-1-資料夾結構建議18" data-id="📁-1-資料夾結構建議"><a class="anchor hidden-xs" href="#📁-1-資料夾結構建議7" title="📁-1-資料夾結構建議7"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📁 </span><strong><span>1. 資料夾結構建議</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="0"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
         <pre class="click-event-handled"><code>/my-mindar-aframe-demo/
 │
 ├── index.html
@@ -132,7 +296,7 @@
 │   └── target.jpg (對應圖示)
 │   └── model.glb (3D 模型)
 </code></pre>
-      </div><hr><h3 id="🧩-2-indexhtml-基本範例8" data-id="🧩-2-indexhtml-基本範例"><a class="anchor hidden-xs" href="#🧩-2-indexhtml-基本範例8" title="🧩-2-indexhtml-基本範例8"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🧩 </span><strong><span>2. </span><code>index.html</code><span> 基本範例</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="4"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+      </div><hr><h3 id="🧩-2-indexhtml-基本範例19" data-id="🧩-2-indexhtml-基本範例"><a class="anchor hidden-xs" href="#🧩-2-indexhtml-基本範例8" title="🧩-2-indexhtml-基本範例8"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🧩 </span><strong><span>2. </span><code>index.html</code><span> 基本範例</span></strong></h3><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="4"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
         <pre class="click-event-handled"><code class="html hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -163,14 +327,14 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-      </div><hr><h3 id="🖼️-3-建立-mind-檔案9" data-id="🖼️-3-建立-mind-檔案"><a class="anchor hidden-xs" href="#🖼️-3-建立-mind-檔案9" title="🖼️-3-建立-mind-檔案9"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🖼️ </span><strong><span>3. 建立 .mind 檔案</span></strong></h3><p><span>使用 MindAR 的官方工具：</span></p><ul>
+      </div><hr><h3 id="🖼️-3-建立-mind-檔案20" data-id="🖼️-3-建立-mind-檔案"><a class="anchor hidden-xs" href="#🖼️-3-建立-mind-檔案9" title="🖼️-3-建立-mind-檔案9"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🖼️ </span><strong><span>3. 建立 .mind 檔案</span></strong></h3><p><span>使用 MindAR 的官方工具：</span></p><ul>
 <li><span>網址：</span><a href="https://hiukim.github.io/mind-ar-js/tools/image-target" target="_blank" rel="noopener"><span>https://hiukim.github.io/mind-ar-js/tools/image-target</span></a></li>
 <li><span>上傳圖片（如 </span><code>target.jpg</code><span>）→ 下載 </span><code>.mind</code><span> 檔案</span></li>
-</ul><hr><h3 id="✅-4-使用提示10" data-id="✅-4-使用提示"><a class="anchor hidden-xs" href="#✅-4-使用提示10" title="✅-4-使用提示10"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>✅ </span><strong><span>4. 使用提示</span></strong></h3><ul>
+</ul><hr><h3 id="✅-4-使用提示21" data-id="✅-4-使用提示"><a class="anchor hidden-xs" href="#✅-4-使用提示10" title="✅-4-使用提示10"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>✅ </span><strong><span>4. 使用提示</span></strong></h3><ul>
 <li><span>確保模型小於 5MB（建議使用 </span><code>.glb</code><span> 格式）</span></li>
 <li><span>模型需放在圖片中心位置（</span><code>position="0 0 0"</code><span>）</span></li>
 <li><span>若模型沒顯示，可用 </span><code>a-box</code><span> 測試顯示效果是否正常</span></li>
-</ul><hr><h3 id="🧪-5-測試建議11" data-id="🧪-5-測試建議"><a class="anchor hidden-xs" href="#🧪-5-測試建議11" title="🧪-5-測試建議11"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🧪 </span><strong><span>5. 測試建議</span></strong></h3><ul>
+</ul><hr><h3 id="🧪-5-測試建議22" data-id="🧪-5-測試建議"><a class="anchor hidden-xs" href="#🧪-5-測試建議11" title="🧪-5-測試建議11"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🧪 </span><strong><span>5. 測試建議</span></strong></h3><ul>
 <li><span>使用 HTTPS 本地伺服器測試（例如用 </span><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank" rel="noopener"><span>Live Server</span></a><span>）</span></li>
 <li><span>可直接用手機掃描展示圖或開啟 index.html 測試追蹤效果</span></li>
 </ul><hr><p><span>如需：</span></p><ul>
@@ -804,7 +968,7 @@ git push
 <p><span>✅ </span><strong><span>多圖偵測</span></strong><br>
 <span>❓ 每次感應出現 </span><strong><span>問答 UI</span></strong><span>（4 選 1）</span><br>
 <span>🎯 使用者選答案後 → 顯示正確與否 → 點按關閉回到追蹤狀態</span></p>
-</blockquote><hr><h2 id="✅-功能說明50" data-id="✅-功能說明"><a class="anchor hidden-xs" href="#✅-功能說明50" title="✅-功能說明50"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>✅ 功能說明</span></h2><ul>
+</blockquote><hr><h2 id="✅-功能說明61" data-id="✅-功能說明"><a class="anchor hidden-xs" href="#✅-功能說明50" title="✅-功能說明50"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>✅ 功能說明</span></h2><ul>
 <li><span>支援多張圖追蹤（可擴充 target）</span></li>
 <li><span>每張圖被偵測時 → 出現一個 4 選 1 問題畫面</span></li>
 <li><span>點選答案 → 顯示答對/錯，顏色標示</span></li>
@@ -948,7 +1112,7 @@ git push
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-      </div><hr><h2 id="📁-資料夾結構建議52" data-id="📁-資料夾結構建議"><a class="anchor hidden-xs" href="#📁-資料夾結構建議52" title="📁-資料夾結構建議52"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📁 資料夾結構建議</span></h2><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="0"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
+      </div><hr><h2 id="📁-資料夾結構建議63" data-id="📁-資料夾結構建議"><a class="anchor hidden-xs" href="#📁-資料夾結構建議52" title="📁-資料夾結構建議52"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>📁 資料夾結構建議</span></h2><div class="code-block-wrapper code-block-toolbar-handled" data-infoprefix-length="0"><div class="code-toolbar"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-button ui-code-block-toolbar-type-code" data-state="closed"><i class="inline-flex ph ph-clipboard-text" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div>
         <pre class="click-event-handled"><code>/index.html
 /assets/
   └── multi-targets.mind     ← 編譯含多圖像的 .mind 檔
@@ -957,7 +1121,7 @@ git push
   ├── mindar-image-aframe.prod.js
   └── aframe-loader.js
 </code></pre>
-      </div><hr><h2 id="🧪-實測建議53" data-id="🧪-實測建議"><a class="anchor hidden-xs" href="#🧪-實測建議53" title="🧪-實測建議53"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🧪 實測建議</span></h2><ul>
+      </div><hr><h2 id="🧪-實測建議64" data-id="🧪-實測建議"><a class="anchor hidden-xs" href="#🧪-實測建議53" title="🧪-實測建議53"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🧪 實測建議</span></h2><ul>
 <li><span>使用 </span><a href="https://hiukim.github.io/mind-ar-js/tools/image-target/" target="_blank" rel="noopener"><span>MindAR 工具</span></a><span> 建立兩張以上圖像 </span><code>.mind</code><span> 檔案</span></li>
 <li><span>每張圖對應一題問答（可在 </span><code>quizData</code><span> 中擴充）</span></li>
 <li><span>測試顯示、選答、回復偵測是否正常</span></li>
@@ -1094,6 +1258,22 @@ git push
                 <div class="toc"><ul class="nav">
 <li class=""><a href="#A-Frame-的cheat-sheet" title="A-Frame 的cheat sheet">A-Frame 的cheat sheet</a><ul class="nav">
 <li class="invisable-node"><ul class="nav">
+<li class=""><a href="#🔧-基本結構" title="🔧 基本結構">🔧 基本結構</a></li>
+<li class=""><a href="#📦-常用-Primitive-元件" title="📦 常用 Primitive 元件">📦 常用 Primitive 元件</a></li>
+<li class=""><a href="#🎯-基本屬性" title="🎯 基本屬性">🎯 基本屬性</a></li>
+<li><a href="#📸-相機與控制" title="📸 相機與控制">📸 相機與控制</a></li>
+<li><a href="#💡-光源元件" title="💡 光源元件">💡 光源元件</a></li>
+<li><a href="#🖼️-材質與貼圖" title="🖼️ 材質與貼圖">🖼️ 材質與貼圖</a></li>
+<li><a href="#🕹️-互動-事件" title="🕹️ 互動 (事件)">🕹️ 互動 (事件)</a></li>
+<li><a href="#🔁-動畫-Animation" title="🔁 動畫 (Animation)">🔁 動畫 (Animation)</a></li>
+<li><a href="#📁-擴充元件範例" title="📁 擴充元件範例">📁 擴充元件範例</a></li>
+<li><a href="#🌐-資源推薦" title="🌐 資源推薦">🌐 資源推薦</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#結合mindarjs--A-Frame的範例" title="結合mindar.js + A-Frame的範例">結合mindar.js + A-Frame的範例</a><ul class="nav">
+<li class="invisable-node"><ul class="nav">
 <li><a href="#📁-1-資料夾結構建議" title="📁 1. 資料夾結構建議">📁 1. 資料夾結構建議</a></li>
 <li><a href="#🧩-2-indexhtml-基本範例" title="🧩 2. index.html 基本範例">🧩 2. index.html 基本範例</a></li>
 <li><a href="#🖼️-3-建立-mind-檔案" title="🖼️ 3. 建立 .mind 檔案">🖼️ 3. 建立 .mind 檔案</a></li>
@@ -1103,13 +1283,13 @@ git push
 </li>
 </ul>
 </li>
-<li><a href="#結合mindarjs--A-Frame的範例" title="結合mindar.js + A-Frame的範例">結合mindar.js + A-Frame的範例</a><ul class="nav">
+<li><a href="#結合mindarjs--A-Frame的範例17" title="結合mindar.js + A-Frame的範例">結合mindar.js + A-Frame的範例</a><ul class="nav">
 <li class="invisable-node"><ul class="nav">
-<li><a href="#📁-1-資料夾結構建議7" title="📁 1. 資料夾結構建議">📁 1. 資料夾結構建議</a></li>
-<li><a href="#🧩-2-indexhtml-基本範例8" title="🧩 2. index.html 基本範例">🧩 2. index.html 基本範例</a></li>
-<li><a href="#🖼️-3-建立-mind-檔案9" title="🖼️ 3. 建立 .mind 檔案">🖼️ 3. 建立 .mind 檔案</a></li>
-<li><a href="#✅-4-使用提示10" title="✅ 4. 使用提示">✅ 4. 使用提示</a></li>
-<li><a href="#🧪-5-測試建議11" title="🧪 5. 測試建議">🧪 5. 測試建議</a></li>
+<li><a href="#📁-1-資料夾結構建議18" title="📁 1. 資料夾結構建議">📁 1. 資料夾結構建議</a></li>
+<li><a href="#🧩-2-indexhtml-基本範例19" title="🧩 2. index.html 基本範例">🧩 2. index.html 基本範例</a></li>
+<li><a href="#🖼️-3-建立-mind-檔案20" title="🖼️ 3. 建立 .mind 檔案">🖼️ 3. 建立 .mind 檔案</a></li>
+<li><a href="#✅-4-使用提示21" title="✅ 4. 使用提示">✅ 4. 使用提示</a></li>
+<li><a href="#🧪-5-測試建議22" title="🧪 5. 測試建議">🧪 5. 測試建議</a></li>
 </ul>
 </li>
 </ul>
@@ -1167,10 +1347,10 @@ git push
 </ul>
 </li>
 <li><a href="#多圖偵測--每次感應跳出題目問答畫面，4選一的問題，答完後關閉畫面" title="多圖偵測 + 每次感應跳出題目問答畫面，4選一的問題，答完後關閉畫面">多圖偵測 + 每次感應跳出題目問答畫面，4選一的問題，答完後關閉畫面</a><ul class="nav">
-<li><a href="#✅-功能說明50" title="✅ 功能說明">✅ 功能說明</a></li>
+<li><a href="#✅-功能說明61" title="✅ 功能說明">✅ 功能說明</a></li>
 <li><a href="#📄-indexhtml-完整程式碼（含問答-UI）" title="📄 index.html 完整程式碼（含問答 UI）">📄 index.html 完整程式碼（含問答 UI）</a></li>
-<li><a href="#📁-資料夾結構建議52" title="📁 資料夾結構建議">📁 資料夾結構建議</a></li>
-<li><a href="#🧪-實測建議53" title="🧪 實測建議">🧪 實測建議</a></li>
+<li><a href="#📁-資料夾結構建議63" title="📁 資料夾結構建議">📁 資料夾結構建議</a></li>
+<li><a href="#🧪-實測建議64" title="🧪 實測建議">🧪 實測建議</a></li>
 </ul>
 </li>
 <li><a href="#示範將回覆的結果複製貼到Github-Pages上" title="示範將回覆的結果複製貼到Github Pages上">示範將回覆的結果複製貼到Github Pages上</a><ul class="nav">
@@ -1184,7 +1364,7 @@ git push
 </li>
 </ul>
 </li>
-<li class=""><a href="#示範將與chatgpt對話的結果複製貼到Github-Pages上" title="示範將與chatgpt對話的結果複製貼到Github Pages上">示範將與chatgpt對話的結果複製貼到Github Pages上</a><ul class="nav">
+<li><a href="#示範將與chatgpt對話的結果複製貼到Github-Pages上" title="示範將與chatgpt對話的結果複製貼到Github Pages上">示範將與chatgpt對話的結果複製貼到Github Pages上</a><ul class="nav">
 <li><a href="#✅-目標" title="✅ 目標">✅ 目標</a></li>
 <li><a href="#🧭-步驟總覽" title="🧭 步驟總覽">🧭 步驟總覽</a></li>
 <li><a href="#1️⃣-建立-GitHub-Repo" title="1️⃣ 建立 GitHub Repo">1️⃣ 建立 GitHub Repo</a></li>
@@ -1196,7 +1376,7 @@ git push
 </li>
 <li><a href="#4️⃣-啟用-GitHub-Pages" title="4️⃣ 啟用 GitHub Pages">4️⃣ 啟用 GitHub Pages</a></li>
 <li><a href="#5️⃣-查看網站！" title="5️⃣ 查看網站！">5️⃣ 查看網站！</a></li>
-<li class=""><a href="#✅-若你需要：" title="✅ 若你需要：">✅ 若你需要：</a></li>
+<li><a href="#✅-若你需要：" title="✅ 若你需要：">✅ 若你需要：</a></li>
 </ul>
 </li>
 </ul>
@@ -1208,6 +1388,22 @@ git push
         <div class="toc"><ul class="nav">
 <li class=""><a href="#A-Frame-的cheat-sheet" title="A-Frame 的cheat sheet">A-Frame 的cheat sheet</a><ul class="nav">
 <li class="invisable-node"><ul class="nav">
+<li class=""><a href="#🔧-基本結構" title="🔧 基本結構">🔧 基本結構</a></li>
+<li class=""><a href="#📦-常用-Primitive-元件" title="📦 常用 Primitive 元件">📦 常用 Primitive 元件</a></li>
+<li class=""><a href="#🎯-基本屬性" title="🎯 基本屬性">🎯 基本屬性</a></li>
+<li><a href="#📸-相機與控制" title="📸 相機與控制">📸 相機與控制</a></li>
+<li><a href="#💡-光源元件" title="💡 光源元件">💡 光源元件</a></li>
+<li><a href="#🖼️-材質與貼圖" title="🖼️ 材質與貼圖">🖼️ 材質與貼圖</a></li>
+<li><a href="#🕹️-互動-事件" title="🕹️ 互動 (事件)">🕹️ 互動 (事件)</a></li>
+<li><a href="#🔁-動畫-Animation" title="🔁 動畫 (Animation)">🔁 動畫 (Animation)</a></li>
+<li><a href="#📁-擴充元件範例" title="📁 擴充元件範例">📁 擴充元件範例</a></li>
+<li><a href="#🌐-資源推薦" title="🌐 資源推薦">🌐 資源推薦</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#結合mindarjs--A-Frame的範例" title="結合mindar.js + A-Frame的範例">結合mindar.js + A-Frame的範例</a><ul class="nav">
+<li class="invisable-node"><ul class="nav">
 <li><a href="#📁-1-資料夾結構建議" title="📁 1. 資料夾結構建議">📁 1. 資料夾結構建議</a></li>
 <li><a href="#🧩-2-indexhtml-基本範例" title="🧩 2. index.html 基本範例">🧩 2. index.html 基本範例</a></li>
 <li><a href="#🖼️-3-建立-mind-檔案" title="🖼️ 3. 建立 .mind 檔案">🖼️ 3. 建立 .mind 檔案</a></li>
@@ -1217,13 +1413,13 @@ git push
 </li>
 </ul>
 </li>
-<li><a href="#結合mindarjs--A-Frame的範例" title="結合mindar.js + A-Frame的範例">結合mindar.js + A-Frame的範例</a><ul class="nav">
+<li><a href="#結合mindarjs--A-Frame的範例17" title="結合mindar.js + A-Frame的範例">結合mindar.js + A-Frame的範例</a><ul class="nav">
 <li class="invisable-node"><ul class="nav">
-<li><a href="#📁-1-資料夾結構建議7" title="📁 1. 資料夾結構建議">📁 1. 資料夾結構建議</a></li>
-<li><a href="#🧩-2-indexhtml-基本範例8" title="🧩 2. index.html 基本範例">🧩 2. index.html 基本範例</a></li>
-<li><a href="#🖼️-3-建立-mind-檔案9" title="🖼️ 3. 建立 .mind 檔案">🖼️ 3. 建立 .mind 檔案</a></li>
-<li><a href="#✅-4-使用提示10" title="✅ 4. 使用提示">✅ 4. 使用提示</a></li>
-<li><a href="#🧪-5-測試建議11" title="🧪 5. 測試建議">🧪 5. 測試建議</a></li>
+<li><a href="#📁-1-資料夾結構建議18" title="📁 1. 資料夾結構建議">📁 1. 資料夾結構建議</a></li>
+<li><a href="#🧩-2-indexhtml-基本範例19" title="🧩 2. index.html 基本範例">🧩 2. index.html 基本範例</a></li>
+<li><a href="#🖼️-3-建立-mind-檔案20" title="🖼️ 3. 建立 .mind 檔案">🖼️ 3. 建立 .mind 檔案</a></li>
+<li><a href="#✅-4-使用提示21" title="✅ 4. 使用提示">✅ 4. 使用提示</a></li>
+<li><a href="#🧪-5-測試建議22" title="🧪 5. 測試建議">🧪 5. 測試建議</a></li>
 </ul>
 </li>
 </ul>
@@ -1281,10 +1477,10 @@ git push
 </ul>
 </li>
 <li><a href="#多圖偵測--每次感應跳出題目問答畫面，4選一的問題，答完後關閉畫面" title="多圖偵測 + 每次感應跳出題目問答畫面，4選一的問題，答完後關閉畫面">多圖偵測 + 每次感應跳出題目問答畫面，4選一的問題，答完後關閉畫面</a><ul class="nav">
-<li><a href="#✅-功能說明50" title="✅ 功能說明">✅ 功能說明</a></li>
+<li><a href="#✅-功能說明61" title="✅ 功能說明">✅ 功能說明</a></li>
 <li><a href="#📄-indexhtml-完整程式碼（含問答-UI）" title="📄 index.html 完整程式碼（含問答 UI）">📄 index.html 完整程式碼（含問答 UI）</a></li>
-<li><a href="#📁-資料夾結構建議52" title="📁 資料夾結構建議">📁 資料夾結構建議</a></li>
-<li><a href="#🧪-實測建議53" title="🧪 實測建議">🧪 實測建議</a></li>
+<li><a href="#📁-資料夾結構建議63" title="📁 資料夾結構建議">📁 資料夾結構建議</a></li>
+<li><a href="#🧪-實測建議64" title="🧪 實測建議">🧪 實測建議</a></li>
 </ul>
 </li>
 <li><a href="#示範將回覆的結果複製貼到Github-Pages上" title="示範將回覆的結果複製貼到Github Pages上">示範將回覆的結果複製貼到Github Pages上</a><ul class="nav">
@@ -1298,7 +1494,7 @@ git push
 </li>
 </ul>
 </li>
-<li class=""><a href="#示範將與chatgpt對話的結果複製貼到Github-Pages上" title="示範將與chatgpt對話的結果複製貼到Github Pages上">示範將與chatgpt對話的結果複製貼到Github Pages上</a><ul class="nav">
+<li><a href="#示範將與chatgpt對話的結果複製貼到Github-Pages上" title="示範將與chatgpt對話的結果複製貼到Github Pages上">示範將與chatgpt對話的結果複製貼到Github Pages上</a><ul class="nav">
 <li><a href="#✅-目標" title="✅ 目標">✅ 目標</a></li>
 <li><a href="#🧭-步驟總覽" title="🧭 步驟總覽">🧭 步驟總覽</a></li>
 <li><a href="#1️⃣-建立-GitHub-Repo" title="1️⃣ 建立 GitHub Repo">1️⃣ 建立 GitHub Repo</a></li>
@@ -1310,7 +1506,7 @@ git push
 </li>
 <li><a href="#4️⃣-啟用-GitHub-Pages" title="4️⃣ 啟用 GitHub Pages">4️⃣ 啟用 GitHub Pages</a></li>
 <li><a href="#5️⃣-查看網站！" title="5️⃣ 查看網站！">5️⃣ 查看網站！</a></li>
-<li class=""><a href="#✅-若你需要：" title="✅ 若你需要：">✅ 若你需要：</a></li>
+<li><a href="#✅-若你需要：" title="✅ 若你需要：">✅ 若你需要：</a></li>
 </ul>
 </li>
 </ul>
